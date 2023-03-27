@@ -1,0 +1,12 @@
+
+C	cpp:S1068(""private field 'parent' is not used(Î£ùêùÿÿÿÿ8Å¼ÿşî0
+E	cpp:S5817")This function should be declared "const".(¸»ª³8Ç½ÿşî0
+J	cpp:S5817")This function should be declared "const".(ûÖİ¶üÿÿÿÿ8È½ÿşî0
+_	cpp:S3229"CField "parent" is initialized after field "letter" and field "end".(­‚ê8É½ÿşî0
+g	cpp:S5566"KChange this raw for-loop to a range for-loop or an "std::ranges::for_each".(–Ä×…8É½ÿşî0
+^	cpp:S5945)"=Use "std::array" or "std::vector" instead of a C-style array.(šÇ†Éşÿÿÿÿ8É½ÿşî0
+|	cpp:S3230/"`Do not assign data members in a constructor. Initialize member "root" in an initialization list.(ªÍâÿ8¥€ÿî0
+m	cpp:S5025/"QReplace the use of "new" with an operation that automatically manages the memory.(ªÍâÿ8¦€ÿî0
+l	cpp:S5566P"KChange this raw for-loop to a range for-loop or an "std::ranges::for_each".(€—ı‡øÿÿÿÿ8Ş²ÿî0
+B	cpp:S5421\"!Global variables should be const.(ÒóàÎùÿÿÿÿ8ïÀ’ÿî0
+†	cpp:S3230"jDo not use the constructor's initializer list for data member "end". Use the in-class initializer instead.(­‚ê8É½ÿşî0
