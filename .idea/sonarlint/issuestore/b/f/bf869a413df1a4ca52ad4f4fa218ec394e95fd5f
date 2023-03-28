@@ -1,0 +1,5 @@
+
+?	cpp:S1481""unused exception parameter 'e'(áÒ··ÿÿÿÿÿ8«ÅËò0
+t	cpp:S1186"YAdd a nested comment explaining why this method is empty, or complete the implementation.(ß—í`8»ÅËò0
+r	cpp:S1172"WRemove the unused parameter "input", make it unnamed, or declare it "[[maybe_unused]]".(ß—í`8¼ÅËò0
+‘cpp:S995"wMake the type of this parameter a reference-to-const. The current type of "input" is "class std::basic_string<char> &".(ß—í`8¼ÅËò0

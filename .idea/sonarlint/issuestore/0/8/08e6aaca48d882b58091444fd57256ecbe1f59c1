@@ -1,0 +1,4 @@
+
+İ	cpp:S5276 "Èimplicit conversion turns floating-point number into integer: 'typename __gnu_cxx::__enable_if<__is_integer<int>::__value, double>::__type' (aka 'double') to 'std::vector<int>::value_type' (aka 'int')(ãÊ e
+¾	cpp:S5276S"£implicit conversion turns floating-point number into integer: 'typename __gnu_cxx::__enable_if<__is_integer<int>::__value, double>::__type' (aka 'double') to 'int'(†˜€ûÿÿÿÿ
+Z	cpp:S5276R"Eimplicit conversion loses integer precision: 'unsigned long' to 'int'(ÛÁÅÛ

@@ -1,0 +1,6 @@
+
+’	cpp:S5276"qimplicit conversion from 'std::basic_string_view::size_type' (aka 'unsigned long') to 'double' may lose precision(£°´óùÿÿÿÿ8èÔÙËò0
+c	cpp:S5276&"Gimplicit conversion loses floating-point precision: 'double' to 'float'(°¿ÇŞ8èÔÙËò0
+‘	cpp:S5276'"pimplicit conversion from 'std::basic_string_view::size_type' (aka 'unsigned long') to 'float' may lose precision(û¡Æ¯ùÿÿÿÿ8éÔÙËò0
+hcpp:S1346"MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Æàº§8¨ŠÌËò0
+	cpp:S5350R"}Make the type of this variable a reference-to-const. The current type of "transmission" is "class std::basic_string<char> &".(èá™Öıÿÿÿÿ8Ã…Ìò0

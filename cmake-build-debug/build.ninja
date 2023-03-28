@@ -54,6 +54,8 @@ build CMakeFiles/Act1.1.dir/A01197991-A00830475_Act1.1/main.cpp.o: CXX_COMPILER_
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles/Act1.1.dir
   OBJECT_FILE_DIR = CMakeFiles/Act1.1.dir/A01197991-A00830475_Act1.1
+  TARGET_COMPILE_PDB = CMakeFiles/Act1.1.dir/
+  TARGET_PDB = Act1.1.pdb
 
 
 # =============================================================================
@@ -68,8 +70,9 @@ build Act1.1: CXX_EXECUTABLE_LINKER__Act1.2e1_Debug CMakeFiles/Act1.1.dir/A01197
   OBJECT_DIR = CMakeFiles/Act1.1.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/Act1.1.dir/
   TARGET_FILE = Act1.1
-  TARGET_PDB = Act1.1.dbg
+  TARGET_PDB = Act1.1.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Act1.2
@@ -85,6 +88,8 @@ build CMakeFiles/Act1.2.dir/A01197991-A00830475_Act1.2/main.cpp.o: CXX_COMPILER_
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles/Act1.2.dir
   OBJECT_FILE_DIR = CMakeFiles/Act1.2.dir/A01197991-A00830475_Act1.2
+  TARGET_COMPILE_PDB = CMakeFiles/Act1.2.dir/
+  TARGET_PDB = Act1.2.pdb
 
 
 # =============================================================================
@@ -99,8 +104,9 @@ build Act1.2: CXX_EXECUTABLE_LINKER__Act1.2e2_Debug CMakeFiles/Act1.2.dir/A01197
   OBJECT_DIR = CMakeFiles/Act1.2.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/Act1.2.dir/
   TARGET_FILE = Act1.2
-  TARGET_PDB = Act1.2.dbg
+  TARGET_PDB = Act1.2.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Act1.3
@@ -116,6 +122,8 @@ build CMakeFiles/Act1.3.dir/A01197991-A00830475_Act1.3/main.cpp.o: CXX_COMPILER_
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles/Act1.3.dir
   OBJECT_FILE_DIR = CMakeFiles/Act1.3.dir/A01197991-A00830475_Act1.3
+  TARGET_COMPILE_PDB = CMakeFiles/Act1.3.dir/
+  TARGET_PDB = Act1.3.pdb
 
 
 # =============================================================================
@@ -130,8 +138,9 @@ build Act1.3: CXX_EXECUTABLE_LINKER__Act1.2e3_Debug CMakeFiles/Act1.3.dir/A01197
   OBJECT_DIR = CMakeFiles/Act1.3.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/Act1.3.dir/
   TARGET_FILE = Act1.3
-  TARGET_PDB = Act1.3.dbg
+  TARGET_PDB = Act1.3.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Act2.1
@@ -147,6 +156,8 @@ build CMakeFiles/Act2.1.dir/A01197991-A00830475_Act2.1/main.cpp.o: CXX_COMPILER_
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles/Act2.1.dir
   OBJECT_FILE_DIR = CMakeFiles/Act2.1.dir/A01197991-A00830475_Act2.1
+  TARGET_COMPILE_PDB = CMakeFiles/Act2.1.dir/
+  TARGET_PDB = Act2.1.pdb
 
 
 # =============================================================================
@@ -161,8 +172,9 @@ build Act2.1: CXX_EXECUTABLE_LINKER__Act2.2e1_Debug CMakeFiles/Act2.1.dir/A01197
   OBJECT_DIR = CMakeFiles/Act2.1.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/Act2.1.dir/
   TARGET_FILE = Act2.1
-  TARGET_PDB = Act2.1.dbg
+  TARGET_PDB = Act2.1.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Act2.2
@@ -178,6 +190,8 @@ build CMakeFiles/Act2.2.dir/A01197991-A00830475_Act2.2/main.cpp.o: CXX_COMPILER_
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles/Act2.2.dir
   OBJECT_FILE_DIR = CMakeFiles/Act2.2.dir/A01197991-A00830475_Act2.2
+  TARGET_COMPILE_PDB = CMakeFiles/Act2.2.dir/
+  TARGET_PDB = Act2.2.pdb
 
 
 # =============================================================================
@@ -192,8 +206,9 @@ build Act2.2: CXX_EXECUTABLE_LINKER__Act2.2e2_Debug CMakeFiles/Act2.2.dir/A01197
   OBJECT_DIR = CMakeFiles/Act2.2.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/Act2.2.dir/
   TARGET_FILE = Act2.2
-  TARGET_PDB = Act2.2.dbg
+  TARGET_PDB = Act2.2.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target quiz0214
@@ -209,6 +224,8 @@ build CMakeFiles/quiz0214.dir/Quiz-02-14/main.cpp.o: CXX_COMPILER__quiz0214_Debu
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles/quiz0214.dir
   OBJECT_FILE_DIR = CMakeFiles/quiz0214.dir/Quiz-02-14
+  TARGET_COMPILE_PDB = CMakeFiles/quiz0214.dir/
+  TARGET_PDB = quiz0214.pdb
 
 
 # =============================================================================
@@ -223,39 +240,77 @@ build quiz0214: CXX_EXECUTABLE_LINKER__quiz0214_Debug CMakeFiles/quiz0214.dir/Qu
   OBJECT_DIR = CMakeFiles/quiz0214.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/quiz0214.dir/
   TARGET_FILE = quiz0214
-  TARGET_PDB = quiz0214.dbg
+  TARGET_PDB = quiz0214.pdb
 
 # =============================================================================
-# Object build statements for EXECUTABLE target main
+# Object build statements for EXECUTABLE target Act3.1
 
 
 #############################################
-# Order-only phony target for main
+# Order-only phony target for Act3.1
 
-build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
+build cmake_object_order_depends_target_Act3.1: phony || CMakeFiles/Act3.1.dir
 
-build CMakeFiles/main.dir/A01197991-A00830475_Act3.1/main.cpp.o: CXX_COMPILER__main_Debug /home/hiram/Projects/TC2038/A01197991-A00830475_Act3.1/main.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/A01197991-A00830475_Act3.1/main.cpp.o.d
+build CMakeFiles/Act3.1.dir/A01197991-A00830475_Act3.1/main.cpp.o: CXX_COMPILER__Act3.2e1_Debug /home/hiram/Projects/TC2038/A01197991-A00830475_Act3.1/main.cpp || cmake_object_order_depends_target_Act3.1
+  DEP_FILE = CMakeFiles/Act3.1.dir/A01197991-A00830475_Act3.1/main.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++20
-  OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir/A01197991-A00830475_Act3.1
+  OBJECT_DIR = CMakeFiles/Act3.1.dir
+  OBJECT_FILE_DIR = CMakeFiles/Act3.1.dir/A01197991-A00830475_Act3.1
+  TARGET_COMPILE_PDB = CMakeFiles/Act3.1.dir/
+  TARGET_PDB = Act3.1.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target main
+# Link build statements for EXECUTABLE target Act3.1
 
 
 #############################################
-# Link the executable main
+# Link the executable Act3.1
 
-build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/A01197991-A00830475_Act3.1/main.cpp.o
+build Act3.1: CXX_EXECUTABLE_LINKER__Act3.2e1_Debug CMakeFiles/Act3.1.dir/A01197991-A00830475_Act3.1/main.cpp.o
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_DIR = CMakeFiles/Act3.1.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = main
-  TARGET_PDB = main.dbg
+  TARGET_COMPILE_PDB = CMakeFiles/Act3.1.dir/
+  TARGET_FILE = Act3.1
+  TARGET_PDB = Act3.1.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ActInt1
+
+
+#############################################
+# Order-only phony target for ActInt1
+
+build cmake_object_order_depends_target_ActInt1: phony || CMakeFiles/ActInt1.dir
+
+build CMakeFiles/ActInt1.dir/_ActInt1/main.cpp.o: CXX_COMPILER__ActInt1_Debug /home/hiram/Projects/TC2038/_ActInt1/main.cpp || cmake_object_order_depends_target_ActInt1
+  DEP_FILE = CMakeFiles/ActInt1.dir/_ActInt1/main.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  OBJECT_DIR = CMakeFiles/ActInt1.dir
+  OBJECT_FILE_DIR = CMakeFiles/ActInt1.dir/_ActInt1
+  TARGET_COMPILE_PDB = CMakeFiles/ActInt1.dir/
+  TARGET_PDB = ActInt1.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ActInt1
+
+
+#############################################
+# Link the executable ActInt1
+
+build ActInt1: CXX_EXECUTABLE_LINKER__ActInt1_Debug CMakeFiles/ActInt1.dir/_ActInt1/main.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/ActInt1.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/ActInt1.dir/
+  TARGET_FILE = ActInt1
+  TARGET_PDB = ActInt1.pdb
 
 
 #############################################
@@ -291,7 +346,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/hiram/Projects/TC2038/cmake-build-debug
 
-build all: phony Act1.1 Act1.2 Act1.3 Act2.1 Act2.2 quiz0214 main
+build all: phony Act1.1 Act1.2 Act1.3 Act2.1 Act2.2 quiz0214 Act3.1 ActInt1
 
 # =============================================================================
 # Built-in targets
@@ -300,14 +355,14 @@ build all: phony Act1.1 Act1.2 Act1.3 Act2.1 Act2.2 quiz0214 main
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/hiram/Projects/TC2038/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/hiram/Projects/TC2038/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCCompilerABI.c /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystem.cmake.in /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/hiram/Projects/TC2038/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+build /home/hiram/Projects/TC2038/CMakeLists.txt /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCCompilerABI.c /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystem.cmake.in /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-FindBinUtils.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-Determine-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /opt/clion/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
 
 
 #############################################

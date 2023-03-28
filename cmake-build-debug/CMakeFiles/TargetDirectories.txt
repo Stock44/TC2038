@@ -4,6 +4,7 @@
 /home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/Act2.1.dir
 /home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/Act2.2.dir
 /home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/quiz0214.dir
-/home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/main.dir
+/home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/Act3.1.dir
+/home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/ActInt1.dir
 /home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/hiram/Projects/TC2038/cmake-build-debug/CMakeFiles/rebuild_cache.dir
