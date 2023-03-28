@@ -1,5 +1,0 @@
-
-‹	cpp:S5276$"qimplicit conversion from 'std::basic_string_view::size_type' (aka 'unsigned long') to 'double' may lose precision(£°´óùÿÿÿÿ
-\	cpp:S5276-"Gimplicit conversion loses floating-point precision: 'double' to 'float'(°¿ÇÞ
-Š	cpp:S5276."pimplicit conversion from 'std::basic_string_view::size_type' (aka 'unsigned long') to 'float' may lose precision(û¡Æ¯ùÿÿÿÿ
-hcpp:S134="MRefactor this code to not nest more than 3 if|for|do|while|switch statements.(Æàº§8ùñáÊò0
