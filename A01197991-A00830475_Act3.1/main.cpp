@@ -93,17 +93,23 @@ int main(){
     trie myTrie;
     int n;
     std::string word;
+    std::vector<bool> isInTrie;
 
     std::cin >> n;
     for (int i = 0; i < n; i++){
         std::cin >> word;
         myTrie.insert(word);
     }
-    printTriePh(0, myTrie.getRoot());
     std::cin >> n;
     for (int j = 0; j < n; j++){
         std::cin >> word;
-        std::cout << myTrie.search(word) << " ";
+        isInTrie.push_back(myTrie.search(word));
     }
+    printTriePh(0, myTrie.getRoot());
+    for (int k = 0; k < isInTrie.size(); k++){
+        std::cout << isInTrie[k] << " ";
+    }
+    std::cout << std::endl;
     return 0;
+
 }
