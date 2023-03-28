@@ -226,6 +226,37 @@ build quiz0214: CXX_EXECUTABLE_LINKER__quiz0214_Debug CMakeFiles/quiz0214.dir/Qu
   TARGET_FILE = quiz0214
   TARGET_PDB = quiz0214.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target main
+
+
+#############################################
+# Order-only phony target for main
+
+build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
+
+build CMakeFiles/main.dir/A01197991-A00830475_Act3.1/main.cpp.o: CXX_COMPILER__main_Debug /home/hiram/Projects/TC2038/A01197991-A00830475_Act3.1/main.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/A01197991-A00830475_Act3.1/main.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir/A01197991-A00830475_Act3.1
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main
+
+
+#############################################
+# Link the executable main
+
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/A01197991-A00830475_Act3.1/main.cpp.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = main
+  TARGET_PDB = main.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -260,7 +291,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/hiram/Projects/TC2038/cmake-build-debug
 
-build all: phony Act1.1 Act1.2 Act1.3 Act2.1 Act2.2 quiz0214
+build all: phony Act1.1 Act1.2 Act1.3 Act2.1 Act2.2 quiz0214 main
 
 # =============================================================================
 # Built-in targets
