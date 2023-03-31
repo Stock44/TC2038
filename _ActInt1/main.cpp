@@ -1,3 +1,9 @@
+/**
+ * Actividad Integradora
+ * Hiram Maximiliano Muñoz Ramirez A01197991
+ * Angel Rigoberto García García A00830475
+ * 30/03/2023
+ */
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -5,7 +11,6 @@
 #include <tuple>
 #include <algorithm>
 #include <string>
-#include <sstream>
 
 /**
  * Generates a suffix array in n (log n)^2 time
@@ -72,63 +77,126 @@ std::vector<std::string> generateSuffixArray(std::string_view inputString) {
     return suffixArray;
 }
 
-std::string findLongestPalindrome(std::string const &text) {
-    auto inputLength = text.length();
-
-    if (inputLength == 0) return "";
-
-    std::string new_text;
-    for (int i = 0; i < inputLength * 2; i++) {
-        new_text += text[i / 2];
+/**
+ * Finds the longest palindrome within a string in O(n) time
+ * @param S
+ * @return
+ */
+std::pair<int, int> findLongestPalindrome(std::string const &S) {
+    std::pair<int, int> res; // resul tado (inicio, longi tud)
+    if (S.length() == 0) // S es nulo
+        return res;
+    std::string T;
+    for (char c: S) {
+        T += "|";
+        T += c;
     }
+    T += "|";
 
-    const auto n = new_text.length();
-    std::vector<std::size_t> p{n, 0};
-
-    std::size_t center = 0;
-    std::size_t right = 0;
-    std::size_t maxCenter = 0;
-    std::size_t maxLen = 0;
-
-    for (int i = 1; i < n - 1; i++) {
-        auto mirr = 2 * center - i;
-        if (i < right) {
-            p[i] = std::min(right - i, p[mirr]);
+    int N = T.length();
+// longi tud y centro del mäximo palindromo encontrado
+    int maxLong = 1, maxCentro = 1; // Hasta ahora posicåön I
+    int L[1000]; //int L[N];
+    int C = 1;
+    int Li = 0, Ri = 0;
+    bool expansion = false; // true si requiera expansidn
+    L[0] = 0;
+    L[1] = 1;
+    for (Ri = 2; Ri < N; Ri++) {
+        expansion = false;
+        Li = C - (Ri - C);
+        if ((C + L[C]) - Ri >= 0) {
+            if (L[Li] < (C + L[C]) - Ri) // caso 1
+                L[Ri] = L[Li];
+            else if (L[Li] == (C + L[C]) - Ri && (C + L[C]) == N - 1) // Caso 2
+                L[Ri] = L[Li];
+            else if (L[Li] == (C + L[C]) - Ri && (C + L[C]) < N - 1) { // Caso 3
+                L[Ri] = L[Li];
+                expansion = true; // requiere expansi6n
+            } else if (L[Li] > (C + L[C]) - Ri) { // Case 4
+                L[Ri] = (C + L[C]) - Ri;
+                expansion = true; // requiere expansidn
+            }
+        } else {
+            L[Ri] = 0;
+            expansion = true; // requiere expansi6n
         }
-        while (new_text[i + p[i] + 1] == new_text[i - p[i] - 1]) {
-            p[i]++;
-        }
-        if (i + p[i] > right) {
-            center = i;
-            right = i + p[i];
-        }
-        if (p[i] > maxLen) {
-            maxLen = p[i];
-            maxCenter = i;
+        if (expansion) // hacer la expansidn hasta donde se pueda
+            while ((Ri + L[Ri]) < N && (Ri - L[Ri]) > 0
+                   && T[Ri + L[Ri] + 1] == T[Ri - L[Ri] - 1])
+                L[Ri]++;
+        if (Ri + L[Ri] > (C + L[C]))
+// si el nuevo palindromo se expande rnés allé de C
+            C = Ri;
+        if (L[Ri] > maxLong) {
+// Guardar longitud y centro del palíndromo más grande,
+// hasta ahora
+            maxLong = L[Ri];
+            maxCentro = Ri;
         }
     }
-    auto inicio = (maxCenter - maxLen) / 2;
-    return text.substr(inicio, maxLen);
+// obtener inicio y longi tud del máximo palíndromo encontrado
+// recordando que la longitud de T es el doble de la de S
+    res.first = (maxCentro - maxLong) / 2; // inicio en S
+    res.second = maxLong; // longitud en S
+    return res;
 }
 
+/**
+ * Reads all of a files contents and stores them in a string, discarding newlines
+ * @param file
+ * @return
+ */
 std::string readWholeFile(std::ifstream &file) {
     std::string fileContents;
 
     for (std::string line; std::getline(file, line);) {
         fileContents.append(line);
-        fileContents.append("\n");
     }
 
     return fileContents;
+}
+
+/**
+ * Finds the longest common substring from two strings, in O(m * n) time, where m and n are the lengths
+ * of both input strings, respectively.
+ * @param s1
+ * @param s2
+ * @return
+ */
+std::pair<int, int> longestCommonSubstring(std::string s1, std::string s2) {
+    int len1 = s1.length();
+    int len2 = s2.length();
+    int dp[2][len2 + 1];
+    int curr = 0;
+    int res = 0;
+    int end = 0;
+    for (int i = 0; i < len1; i++) {
+        for (int j = 0; j < len2; j++) {
+            if (i == 0 || j == 0)
+                dp[curr][j] = 0;
+            else if (s1[i - 1] == s2[j - 1]) {
+                dp[curr][j] = dp[1 - curr][j - 1] + 1;
+                if (res < dp[curr][j]) {
+                    res = dp[curr][j];
+                    end = i - 1;
+                }
+            } else {
+                dp[curr][j] = 0;
+            }
+        }
+        curr = 1 - curr;
+    }
+    return {end - res + 1, res};
 }
 
 int main() {
     std::vector<std::ifstream> transmissionFiles;
     std::vector<std::string> transmissions;
     std::vector<std::vector<std::string>> suffixArrays;
-
     std::vector<std::ifstream> maliciousCodeFiles;
     std::vector<std::string> maliciousCodes;
+    std::vector<int> idk;
 
     transmissionFiles.emplace_back("transmission1.txt");
     transmissionFiles.emplace_back("transmission2.txt");
@@ -138,17 +206,39 @@ int main() {
     maliciousCodeFiles.emplace_back("mcode3.txt");
 
     for (auto &file: transmissionFiles) {
-        std::string &transmission = transmissions.emplace_back(readWholeFile(file));
+        std::string const &transmission = transmissions.emplace_back(readWholeFile(file));
         suffixArrays.emplace_back(generateSuffixArray(transmission));
     }
 
-    std::transform(maliciousCodeFiles.begin(), maliciousCodeFiles.end(), std::back_inserter(maliciousCodes), readWholeFile);
+    std::transform(maliciousCodeFiles.begin(), maliciousCodeFiles.end(), std::back_inserter(maliciousCodes),
+                   readWholeFile);
 
+    auto transmissionIt = transmissions.begin();
     for (auto const &suffixArray: suffixArrays) {
+        for (auto const &maliciousCode: maliciousCodes) {
+            auto suffixIt = std::lower_bound(suffixArray.begin(), suffixArray.end(), maliciousCode);
+            auto const &suffix = *suffixIt;
+            auto [mCodeCharIt, suffixCharIt] = std::mismatch(maliciousCode.begin(), maliciousCode.end(),
+                                                             suffix.begin());
 
+            bool found = mCodeCharIt == maliciousCode.end() && suffixCharIt != maliciousCode.end();
+            if (!found) std::cout << "false\n";
+            else {
+                std::cout << "true " << transmissionIt->length() - suffix.length() << "\n";
+            }
+        }
+
+        transmissionIt++;
     }
 
+    for (auto const &transmission: transmissions) {
+        auto [position, length] = findLongestPalindrome(transmission);
+        std::cout << position << " " << position + length << "\n";
+    }
 
+    auto [position, count] = longestCommonSubstring(transmissions[0], transmissions[1]);
+
+    std::cout << position << " " << position + count;
 
     return 0;
 }
