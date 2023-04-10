@@ -12,10 +12,6 @@
 
 void modify(std::string &input) {}
 
-{
-//...
-}
-
 /**
  * printRange streams to std::cout a range of values
  * @tparam R type of range to sort
