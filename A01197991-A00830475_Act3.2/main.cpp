@@ -1,3 +1,11 @@
+/**
+ * Actividad 3.2 Implementación de "Dijkstra and Floyd"
+ * Hiram Maximiliano Muñoz Ramirez A01197991
+ * Angel Rigoberto García García A00830475
+ * Este programa implementa dos algoritmos de busqueda de caminos mas cortos en un grafo: el algoritmo de Djikstra y
+ * el algoritmo de Floyd-Warshall.
+ * 10/04/23
+ */
 #include <iostream>
 #include <vector>
 #include <optional>
@@ -9,6 +17,14 @@ using AdjacencyMatrix = std::vector<std::vector<int>>;
 using Distances = std::vector<std::optional<int>>;
 using PreviousVertices = std::vector<std::optional<int>>;
 
+/**
+ * Este algoritmo se ejecuta en tiempo O(V^2), V siendo el numero de vertices del grafo. Cada vertice es explorado una
+ * vez, y se exploran todos los vertices que lo rodean.
+ * @param graph La matriz de adjacencia que representa el grafo. Se asume que -1 significa que los nodos estan
+ * desconectados
+ * @param source El nodo de origen de la busqueda.
+ * @return Las distancias del vertice de origen a destino, y el vertice anterior para cada vertice
+ */
 std::pair<Distances, PreviousVertices> djikstraShortesPath(AdjacencyMatrix const &graph, std::size_t source) {
     Distances distances(graph.size());
     PreviousVertices prevVertices(graph.size());
@@ -44,6 +60,12 @@ std::pair<Distances, PreviousVertices> djikstraShortesPath(AdjacencyMatrix const
     return {std::move(distances), std::move(prevVertices)};
 }
 
+/**
+ * Este algoritmo calcula las distancias mas cortas para un grafo representado por una matriz de adjacencia. El algoritmo
+ * se ejecuta en tiempo O(V^3), realizando tres bucles desde 0 a V.
+ * @param graph La matriz de adjacencia que representa el grafo.
+ * @return Una matriz de adjacencia que continene las distancias minimas entre vertices.
+ */
 AdjacencyMatrix floydShortestPaths(AdjacencyMatrix const &graph) {
     auto n = graph.size();
     AdjacencyMatrix pathWeights = graph;
