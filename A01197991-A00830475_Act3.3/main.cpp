@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 
 struct Object {
     int value;
@@ -24,5 +25,20 @@ int knapsackSolver(std::vector<Object> const &objects, int maxWeight) {
 }
 
 int main() {
-    return 0;
+    int n, values, maxWeight;
+    std::cin>>n;
+    std::vector<Object> products;
+    Object newObject{};
+    for(int i = 0;i < n ;i++){
+        std::cin>>values;
+        newObject.value = values;
+        products.push_back(newObject);
+    }
+    for(int j = 0;j < n ;j++){
+        std::cin>>values;
+        products.at(j).weight = values;
+    }
+    std::cin>>maxWeight;
+    std::cout << "El beneficio optimo es de: ";
+    std::cout << knapsackSolver(products, maxWeight) << std::endl;
 }
