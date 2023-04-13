@@ -41,4 +41,6 @@ int main() {
     std::cin>>maxWeight;
     std::cout << "El beneficio optimo es de: ";
     std::cout << knapsackSolver(products, maxWeight) << std::endl;
+
+    return 0;
 }
