@@ -10,14 +10,40 @@
 #include <iostream>
 #include <vector>
 #include <optional>
-#include <queue>
-#include <set>
-#include <numeric>
 
+struct edge
+{
+    int start;
+    int longitude;
+    int end;
+};
 using AdjacencyMatrix = std::vector<std::vector<int>>;
 
 void printKruskalMinimumSpanningTree(AdjacencyMatrix const &graph) {
+    int total = 0, swap;
+    std::vector<edge> edges;
+    std::vector<std::vector<int>> vertex;
+    size_t n = graph.size();
+    for (int k = 1; k <= n; k++){
+        vertex.at(k-1).emplace_back(k);
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = i+1; j < n; j++){
+            edge newEdge{
+                i,
+                graph.at(i).at(j),
+                j
+            };
+            edges.emplace_back(newEdge);
+        }
+    }
+    //std::sort(edges.begin(),edges.end()); falta ordenar el vector
+    std::cout << edges.at(0).longitude << std::endl;
+    total += edges.at(0).longitude;
+    swap = edges.at(0).end;
+    vertex.at(edges.at(0).start).emplace_back(swap);
 
+    std::cout << total << std::endl;
 }
 
 int main() {
