@@ -20,10 +20,11 @@ struct edge
 using AdjacencyMatrix = std::vector<std::vector<int>>;
 
 void printKruskalMinimumSpanningTree(AdjacencyMatrix const &graph) {
-    int total = 0, iter = 0;
+    int total = 0, iter = 2;
     std::vector<edge> edges;
     std::vector<std::vector<int>> vertex;
     size_t n = graph.size();
+
     for (int k = 1; k <= n; k++){
         vertex.at(k-1).emplace_back(k);
     }
@@ -38,15 +39,37 @@ void printKruskalMinimumSpanningTree(AdjacencyMatrix const &graph) {
         }
     }
     //std::sort(edges.begin(),edges.end()); falta ordenar el vector
+
+    //Primer arista agregada
     std::cout << edges.at(0).longitude << std::endl;
     total += edges.at(0).longitude;
+
     vertex.at(edges.at(0).start).emplace_back(edges.at(0).end);
 
+    //Segunda arista agregada
+    std::cout << edges.at(1).longitude << std::endl;
+    total += edges.at(1).longitude;
+
+    for(auto &data : vertex.at(edges.at(1).end)){
+        //if(){  comprobar si el int no esta en vector de inicio.
+            vertex.at(edges.at(1).start).emplace_back(data);
+        //}
+    }
+    vertex.at(edges.at(1).start).emplace_back(edges.at(1).end);
+
+    //Proceso para comprobar que no hay bucle en las siguientes aristas
     size_t edgeSize = edges.size();
-
     while(vertex.at(0).size() != n){
-        
+        edges.at(iter);
 
+        //if(vertex.at(edges.at(iter).end) == vertex.at(edges.at(iter).end)){ Comprobar si el inicio y final de edges esta dentro de el vector inicial.
+
+        }
+        for(auto &data : vertex.at(edges.at(iter).end)){
+            //if(){ // comprobar si el int no esta en vector de inicio.
+                vertex.at(edges.at(iter).start).emplace_back(data);
+            //}
+        //}
         iter++;
     }
 
