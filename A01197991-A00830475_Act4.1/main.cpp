@@ -3,6 +3,9 @@
  * Hiram Maximiliano Muñoz Ramirez A01197991
  * Angel Rigoberto García García A00830475
  *
+ * This file implements the solution to activity 4.1, finding whether an pairs of lines
+ * intersect each other.
+ *
  * 04/05/23
  */
 
