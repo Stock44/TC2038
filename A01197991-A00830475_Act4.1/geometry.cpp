@@ -22,14 +22,8 @@ namespace geo {
 
     Line Line::fromPoints(Point const &p1, Point const &p2) {
         using std::abs;
-
-
-        if (abs(p1.x - p2.x) < EPSILON) {
-            return Line(1.0, 0.0, -p1.x);
-        }
-
-        double aux = (p1.y - p2.y) / (p1.x - p2.x);
-        return Line(-aux, 1.0, -(aux * p1.x) - p1.y);
+        double m = (p1.y - p2.y) / (p1.x - p2.x);
+        return Line(m, -1.0, p1.y - m * p1.x);
     }
 
     Line Line::fromPointAndSlope(Point const &p, double m) {
@@ -43,18 +37,19 @@ namespace geo {
 
     std::optional<Point> intersectionPoint(Line const &l1, Line const &l2) {
         using std::abs;
-        Point point{};
 
         if (areParallel(l1, l2)) {
             return {};
         }
 
-        point.x = (l1.b * l1.c - l1.b * l2.c) / (l2.a * l1.b - l1.a * l2.b);
+        Point point{};
+        point.x = ((l1.b * l2.c) - (l2.b * l1.c)) /
+                  ((l1.a * l2.b) - (l2.a * l1.b));
 
         if (abs(l1.b) < EPSILON) {
-            point.y = -(l1.a * point.x + l1.c);
+            point.y = -(l2.a * point.x + l2.c) / l2.b;
         } else {
-            point.y = -(l1.a * point.x + l2.c);
+            point.y = -(l1.a * point.x + l1.c) / l1.b;
         }
 
         return point;
@@ -103,7 +98,7 @@ namespace geo {
         }
 
         auto p = intersectionPoint(l1, l2);
-        if (!p) return false;
+        if (!p.has_value()) return false;
         return pointInBox(p.value(), s1.p1, s1.p2) &&
                pointInBox(p.value(), s2.p1, s2.p2);
     }
