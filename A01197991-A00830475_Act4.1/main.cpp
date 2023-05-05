@@ -6,6 +6,10 @@
  * This file implements the solution to activity 4.1, finding whether an pairs of lines
  * intersect each other.
  *
+ * Compiled on Arch Linux (Linux 6.2.10) with the gcc compiler toolchain version 12.2.1
+ * g++ -o out -std=c++20 main.cpp
+ * ./out
+ *
  * 04/05/23
  */
 
