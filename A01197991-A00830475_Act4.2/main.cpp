@@ -4,15 +4,19 @@
  * Angel Rigoberto García García A00830475
  *
  *
- * Compiled on Arch Linux (Linux 6.2.10) with the gcc compiler toolchain version 12.2.1
+ * Compiled on Arch Linux (Linux 6.2.10) with the gcc compiler toolchain version 13.1.1
  * g++ -o out -std=c++20 main.cpp geometry.cpp
  * ./out
  *
  * 18/05/23
  */
 
-#include <bits/stdc++.h>
 #include "geometry.hpp"
+#include <span>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <ranges>
 
 using PointPairDistance = std::tuple<geo::Point, geo::Point, double>;
 
