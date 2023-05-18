@@ -62,7 +62,7 @@ PointPairDistance closestPointsHelper(R points) {
     geo::Point &midPoint = points[mid];
 
     auto [leftP1, leftP2, leftMinDist] = closestPointsHelper(points | std::views::take(mid));
-    auto [rightP1, rightP2, rightMinDist] = closestPointsHelper(points | std::views::drop(mid + 1));
+    auto [rightP1, rightP2, rightMinDist] = closestPointsHelper(points | std::views::drop(mid));
 
     double minDist = std::min(leftMinDist, rightMinDist);
     geo::Point minP1{};
