@@ -7,7 +7,7 @@
  * intersect each other.
  *
  * Compiled on Arch Linux (Linux 6.2.10) with the gcc compiler toolchain version 12.2.1
- * g++ -o out -std=c++20 main.cpp
+ * g++ -o out -std=c++20 main.cpp geometry.cpp
  * ./out
  *
  * 04/05/23

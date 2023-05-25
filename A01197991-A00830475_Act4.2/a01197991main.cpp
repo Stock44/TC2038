@@ -3,15 +3,17 @@
  * Hiram Maximiliano Muñoz Ramirez A01197991
  * Angel Rigoberto García García A00830475
  *
+ * This program implements a divide and conquer algorithm for finding the two closest points within a list
+ * of points, in 2D space.
  *
  * Compiled on Arch Linux (Linux 6.2.10) with the gcc compiler toolchain version 13.1.1
- * g++ -o out -std=c++20 main.cpp geometry.cpp
+ * g++ -o out -std=c++20 a01197991main.cpp a01197991geometry.cpp
  * ./out
  *
  * 18/05/23
  */
 
-#include "geometry.hpp"
+#include "a01197991geometry.hpp"
 #include <span>
 #include <iostream>
 #include <vector>
@@ -20,6 +22,12 @@
 
 using PointPairDistance = std::tuple<geo::Point, geo::Point, double>;
 
+/**
+ * Finds the closest points within a range of points, using euclidean distance. This runs in O(n^2), as each node
+ * has to be compared with each other node.
+ * @param points
+ * @return
+ */
 PointPairDistance bruteForce(std::span<geo::Point> points) {
     double min = std::numeric_limits<float>::max();
     std::size_t point1 = 0;
@@ -35,6 +43,13 @@ PointPairDistance bruteForce(std::span<geo::Point> points) {
     return {points[point1], points[point2], min};
 }
 
+/**
+ * Finds the closest set of points that cross a strip, with a minimum distance. Runs in O(n) time, inner loop doesn't run
+ * for every element.
+ * @param strip
+ * @param d
+ * @return
+ */
 PointPairDistance stripClosest(std::span<geo::Point> strip, double d) {
     double min = d;
     std::size_t point1 = 0;
@@ -53,6 +68,13 @@ PointPairDistance stripClosest(std::span<geo::Point> strip, double d) {
     return {strip[point1], strip[point2], min};
 }
 
+/**
+ * Internal helper function for a divide and conquer algorithm for finding the closest pair of
+ * points of a set of points.
+ * @tparam R range type for range of points
+ * @param points range of points
+ * @return
+ */
 template<std::ranges::contiguous_range R>
 PointPairDistance closestPointsHelper(R points) {
     if (points.size() <= 3)
@@ -89,6 +111,12 @@ PointPairDistance closestPointsHelper(R points) {
     return {minP1, minP2, minDist};
 }
 
+/**
+ * Finds the closest pair of points in a list of points in O(n log n log n), with the helper function having a
+ * complexity of O(n log n) and the sorting function O(log n).
+ * @param points all points
+ * @return
+ */
 std::tuple<geo::Point, geo::Point, double> closestPoints(std::span<geo::Point> points) {
     std::ranges::sort(points, std::less<>(), &geo::Point::x);
     return closestPointsHelper(points);
