@@ -83,7 +83,7 @@ bool Graph::BFS(int s, int t)
 
     // IF we can not reach to the sink we
     // return false else true
-    return level[t] < 0 ? false : true;
+    return level[t] >= 0;
 }
 
 // A DFS based function to send flow after BFS has

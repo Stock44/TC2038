@@ -3,16 +3,14 @@
 #include <optional>
 #include <iostream>
 #include "geometry.hpp"
-
-using AdjacencyMatrixRow = std::vector<std::optional<float>>;
-using AdjacencyMatrix = std::vector<AdjacencyMatrixRow>;
+#include "algorithm.hpp"
 
 int main() {
     std::size_t n;
     std::cin >> n;
 
-    AdjacencyMatrix distanceGraph{n, AdjacencyMatrixRow(n)};
-    AdjacencyMatrix flowGraph{n, AdjacencyMatrixRow(n)};
+    alg::AdjacencyMatrix distanceGraph{n, alg::AdjacencyMatrixRow(n)};
+    alg::AdjacencyMatrix flowGraph{n, alg::AdjacencyMatrixRow(n)};
     std::vector<geo::Point> points;
 
     for (std::size_t i = 0; i < n; i++) {
@@ -34,7 +32,7 @@ int main() {
     }
 
     std::string line;
-    for(std::size_t i = 0; i < n; i++) {
+    for (std::size_t i = 0; i < n; i++) {
         std::getline(std::cin, line);
         std::string token;
         double x;
@@ -48,7 +46,27 @@ int main() {
         points.emplace_back(x, y);
     }
 
-    // TODO implement the 4 solutions
+    // execute all the algorithms here
+    // minimum spanning tree to find most efficient way to connect all nodes
+    auto mst = alg::minimumSpanningTreeEdges(distanceGraph);
+
+    // traveling salesman problem to find path that goes through all nodes
+    // TODO process floyd weights
+    auto weights = alg::floydShortestPaths(distanceGraph);
+    std::vector<std::pair<std::size_t, std::size_t>> shortestRoute;
+
+    //assume distance graph is symmetrical
+
+    // TODO find maximum flux for network
+
+    // TODO find voronoi diagram
+
+    // do all the printing here
+    for(auto const &[start, end]: mst) {
+        std::cout << "(" << start << "," << end << ")\n";
+    }
+
+    std::cout.flush();
 
     return 0;
 }
