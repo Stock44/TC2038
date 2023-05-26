@@ -21,4 +21,4 @@ add_executable(quiz0311 Quiz-03-11/main.cpp)
 add_executable(Act4.1 A01197991-A00830475_Act4.1/main.cpp A01197991-A00830475_Act4.1/geometry.cpp)
 add_executable(quiz0403 Quiz-04-03/main.cpp)
 add_executable(Act4.2 A01197991-A00830475_Act4.2/a01197991main.cpp A01197991-A00830475_Act4.2/a01197991geometry.cpp)
-add_executable(Act4.3 A01197991-A00830475_Act4.3/main.cpp A01197991-A00830475_Act4.3/a01197991geometry.cpp)|
+add_executable(Act4.3 A01197991-A00830475_Act4.3/main.cpp A01197991-A00830475_Act4.3/a01197991geometry.cpp)
