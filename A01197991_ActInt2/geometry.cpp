@@ -140,6 +140,15 @@ namespace geo {
         return abs(result) / 2.0;
     }
 
+    /**
+     * This function obtains all the polygons that compose the Voronoin diagram for a series of points. It first
+     * obtains the Delaunay triangulation via the Bowyer Watson algorithm, then obtaining the dual of this graph.
+     * Its worst-case complexity is O(n^2), being mostly affected by the time complexity of the Delaunay algorithm's
+     * time complexity.It returns a vector of Polygons. This vector skips over any polygon whose edges extend to infinity,
+     * only keeping the inner, whole polygons>
+     * @param points
+     * @return
+     */
     std::vector<Polygon> voronoiDiagram(const std::vector<Point> &points) {
         auto delaunay = bowyerWatson(points);
         std::vector<Point> circumcenters;
@@ -244,6 +253,13 @@ namespace geo {
         return std::abs(d1 - d2) <= std::max(std::abs(d1), std::abs(d2)) * 2 * std::numeric_limits<double>::epsilon();
     }
 
+    /**
+     * Obtains the Delaunay triangulation for a set of points via the Bowyer-Watson algorithm.
+     * This algorithm has a worst-case time complexity of O(n^2), scaling quadratically as more points are added
+     * to the input vector. It finally outputs a vector of Triangle objects, each containing its 3 copies of its points.
+     * @param points
+     * @return
+     */
     std::vector<Triangle> bowyerWatson(const std::vector<Point> &points) {
         std::map<std::size_t, Triangle> triangles;
         std::size_t nextId = 0;
@@ -266,7 +282,7 @@ namespace geo {
         Triangle superTriangle({{{minX - width, minY - height}, {maxX + width * 3, minY - height},
                                  {minX - width, maxY + height * 3}}});
 
-        // add the supertriangle as the first triangle in the triangulation set
+        // add the super triangle as the first triangle in the triangulation set
         triangles.emplace(nextId, superTriangle);
         nextId++;
 

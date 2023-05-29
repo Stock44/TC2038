@@ -54,19 +54,6 @@ int main() {
 
     // TODO find maximum flux for network
 
-    // TODO find voronoi diagram
-
-    // do all the printing here
-    std::cout << "-1" << "\n";
-    for (auto const &edge: mst) {
-        std::cout << edge.weight << "\n";
-        maxLength += edge.weight;
-    }
-    std::cout << maxLength << std::endl;
-
-    std::cout << "-2" << "\n";
-
-
     auto voronoi = geo::voronoiDiagram(points);
 
     std::ranges::sort(voronoi, [](auto const &p1, auto const &p2) {
@@ -75,12 +62,28 @@ int main() {
         return min1 < min2;
     });
 
-    int count = 1;
     for (auto &polygon: voronoi) {
         auto minIt = std::ranges::min_element(polygon.points, std::less(), &geo::Point::x);
 
         if (minIt != polygon.points.end()) std::ranges::rotate(polygon.points, minIt + 1);
+    }
 
+    // Print the minimum expansion tree
+    std::cout << "-1" << "\n";
+    for (auto const &edge: mst) {
+        std::cout << edge.weight << "\n";
+        maxLength += edge.weight;
+    }
+    std::cout << maxLength << std::endl;
+
+    // Print the traveling salesman solution
+    std::cout << "-2" << "\n";
+
+
+    // Print the voronoi polygons
+    std::cout << "-4" << "\n";
+    int count = 1;
+    for (auto const &polygon: voronoi) {
         std::cout << "-4" << count << "\n";
         for (auto const &point: polygon.points | std::views::reverse) {
             std::cout << point.x << " " << point.y << "\n";
