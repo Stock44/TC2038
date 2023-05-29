@@ -28,7 +28,7 @@ namespace alg {
      * edge with the smallest weight run in O(1).
      * @param graph
      */
-    std::vector<std::pair<std::size_t, std::size_t>> minimumSpanningTreeEdges(AdjacencyMatrix const &graph);
+    std::vector<GraphEdge> minimumSpanningTreeEdges(AdjacencyMatrix const &graph);
 
     /**
      * Este algoritmo calcula las distancias mas cortas para un grafo representado por una matriz de adjacencia. El algoritmo

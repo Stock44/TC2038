@@ -6,9 +6,9 @@
 #include "algorithm.hpp"
 
 int main() {
+    int maxLength = 0;
     std::size_t n;
     std::cin >> n;
-
     alg::AdjacencyMatrix distanceGraph{n, alg::AdjacencyMatrixRow(n)};
     alg::AdjacencyMatrix flowGraph{n, alg::AdjacencyMatrixRow(n)};
     std::vector<geo::Point> points;
@@ -62,9 +62,15 @@ int main() {
     // TODO find voronoi diagram
 
     // do all the printing here
-    for(auto const &[start, end]: mst) {
-        std::cout << "(" << start << "," << end << ")\n";
+    std::cout << "-1" << "\n";
+    for (auto const &edge: mst) {
+        std::cout << edge.weight << "\n";
+        maxLength += edge.weight;
     }
+    std::cout << maxLength << std::endl;
+
+    std::cout << "-2" << "\n";
+
 
     std::cout.flush();
 

@@ -9,7 +9,7 @@
 
 namespace alg {
 
-    std::vector<std::pair<std::size_t, std::size_t>> minimumSpanningTreeEdges(const AdjacencyMatrix &graph) {
+    std::vector<GraphEdge> minimumSpanningTreeEdges(const AdjacencyMatrix &graph) {
         size_t vertexCount = graph.size();
         std::vector<GraphEdge> edges;
         dst::DisjointSet disjointSet(vertexCount);
@@ -25,15 +25,12 @@ namespace alg {
         }
         std::ranges::sort(edges, std::less<>(), &GraphEdge::weight);
 
-
-        std::vector<std::pair<std::size_t, std::size_t>> treeEdges;
         for (auto const &edge: edges) {
             if (disjointSet.findRepresentative(edge.start) != disjointSet.findRepresentative(edge.end)) {
                 disjointSet.nodeUnion(edge.start, edge.end);
-                treeEdges.emplace_back(edge.start, edge.end);
             }
         }
-        return treeEdges;
+        return edges;
     }
 
     AdjacencyMatrix floydShortestPaths(const AdjacencyMatrix &graph) {
@@ -55,14 +52,33 @@ namespace alg {
     }
 
     bool bfs(const AdjacencyMatrix &graph, std::size_t v1, std::size_t v2) {
-        for (int i = 0; i < graph.size(); i++) {
-
+        bool visited[graph.size()];
+        std::queue<int> queue;
+        queue.push(v1);
+        visited[v1] = true;
+        while(!queue.empty()){
+            int actualNode = queue.front();
+            queue.pop();
+            for (int i = 0; i < graph.size(); i++) {
+                if(!visited[i] && graph.at(actualNode).at(i) > 0){
+                    if(i == v2){
+                        return true;
+                    }
+                    queue.push(i);
+                    visited[i] = true;
+                }
+            }
         }
         return false;
     }
 
-    int sendFlow(const AdjacencyMatrix &graph, std::size_t v1, std::size_t v2, int flow, int t,
-                 std::span<std::size_t> start) {
+    int sendFlow(const AdjacencyMatrix &graph, std::size_t v1, std::size_t v2, int flow, int t,std::span<std::size_t> start) {
+        if(v1 == v2){
+            return flow;
+        }
+        for(;start[v1] < graph.size();start[v1]++){
+
+        }
         return 0;
     }
 
