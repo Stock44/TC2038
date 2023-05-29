@@ -6,10 +6,19 @@
 #include <cmath>
 #include <optional>
 #include <vector>
+#include <unordered_map>
+#include <deque>
+#include <map>
+#include <list>
+#include <set>
+#include <array>
+#include <ranges>
 
 namespace geo {
     // Used for floating point comparisons
     const double EPSILON = 1e-9;
+
+    bool dsame(double d1, double d2);
 
     /**
      * Structure representing a point in 2D space
@@ -18,6 +27,8 @@ namespace geo {
         double x;
         double y;
     };
+
+    bool operator==(Point const &p1, Point const &p2);
 
     /**
      * Structure representing a line in 2D space
@@ -52,6 +63,8 @@ namespace geo {
         Point p1;
         Point p2;
     };
+
+    bool operator==(LineSegment const &l1, LineSegment const &l2);
 
     /**
      * Structure representing a polygon with vertices stored in a vector
@@ -140,6 +153,20 @@ namespace geo {
      */
     double distance(Point const &p1, Point const &p2);
 
+    struct Triangle {
+        std::array<Point, 3> points;
+    };
+
+    double triangleArea(Triangle const &t);
+
+
+    bool pointInTriangle(Point const &p, Triangle const &t);
+
+    Point triangleCircumcentre(Triangle const &t);
+
+    bool pointInTriangleCircumference(Point const &p, Triangle const &t);
+
+
     /**
      * Rotates a point around the world origin (0,0) for a given angle
      * in radians.
@@ -148,5 +175,17 @@ namespace geo {
      * @return
      */
     Point rotate(Point const &p, double theta);
+
+
+    std::vector<Triangle> bowyerWatson(std::vector<Point> const &points);
+
+    std::vector<Polygon> voronoiDiagram(std::vector<Point> const &points);
+
+    /**
+     * Obtains an array of the LineSegments that represent the triangle's edges.
+     * @param triangle
+     * @return
+     */
+    std::array<LineSegment, 3> triangleEdges(Triangle const &triangle);
 }
 

@@ -83,7 +83,7 @@ namespace alg {
     }
 
     float maximumFlow(AdjacencyMatrix const &capacityGraph, std::size_t v1, std::size_t v2) {
-        std::vector<std::vector<float>> flowGraph{capacityGraph.size(), std::vector<float>(v, 0.0f)};
+        std::vector<std::vector<float>> flowGraph{capacityGraph.size(), std::vector<float>(v1, 0.0f)};
 
         std::vector<std::optional<std::size_t>> levels{capacityGraph.size()};
         levels.at(v1) = 0;

@@ -1,6 +1,4 @@
 #include <vector>
-#include <unordered_map>
-#include <optional>
 #include <iostream>
 #include "geometry.hpp"
 #include "algorithm.hpp"
@@ -38,11 +36,8 @@ int main() {
         double x;
         double y;
 
-        std::getline(std::cin, token, '(');
-        std::getline(std::cin, token, ',');
-        x = std::stod(token);
-        std::getline(std::cin, token, ')');
-        y = std::stod(token);
+        std::cin >> x;
+        std::cin >> y;
         points.emplace_back(x, y);
     }
 
@@ -71,6 +66,27 @@ int main() {
 
     std::cout << "-2" << "\n";
 
+
+    auto voronoi = geo::voronoiDiagram(points);
+
+    std::ranges::sort(voronoi, [](auto const &p1, auto const &p2) {
+        double min1 = std::ranges::min(p1.points, std::less(), &geo::Point::x).x;
+        double min2 = std::ranges::min(p2.points, std::less(), &geo::Point::x).x;
+        return min1 < min2;
+    });
+
+    int count = 1;
+    for (auto &polygon: voronoi) {
+        auto minIt = std::ranges::min_element(polygon.points, std::less(), &geo::Point::x);
+
+        if (minIt != polygon.points.end()) std::ranges::rotate(polygon.points, minIt + 1);
+
+        std::cout << "-4" << count << "\n";
+        for (auto const &point: polygon.points | std::views::reverse) {
+            std::cout << point.x << " " << point.y << "\n";
+        }
+        count++;
+    }
 
     std::cout.flush();
 
