@@ -76,14 +76,18 @@ namespace alg {
         if(v1 == v2){
             return flow;
         }
-        for(;start[v1] < graph.size();start[v1]++){
+        for(;start[v1] < graph.at(v1).size();start[v1]++){
 
         }
         return 0;
     }
 
     float maximumFlow(AdjacencyMatrix const &capacityGraph, std::size_t v1, std::size_t v2) {
+<<<<<<< Updated upstream
         std::vector<std::vector<float>> flowGraph{capacityGraph.size(), std::vector<float>(v1, 0.0f)};
+=======
+        std::vector<std::vector<float>> flowGraph{capacityGraph.size(), std::vector<float>(capacityGraph.size(), 0.0f)};
+>>>>>>> Stashed changes
 
         std::vector<std::optional<std::size_t>> levels{capacityGraph.size()};
         levels.at(v1) = 0;
@@ -91,25 +95,25 @@ namespace alg {
         std::vector<GraphEdge> edges;
 
         if (v1 == v2) return 0;
+
         int total = 0;
 
-        while (true) {
+        while (bfs(capacityGraph,v1,v2)) {
             std::queue<std::size_t> q;
             q.push(v1);
-
             while (!q.empty()) {
-                std::size_t u = q.front();
+                std::size_t node = q.front();
                 q.pop();
 
                 for (std::size_t neighbor = 0; neighbor < capacityGraph.size(); neighbor++) {
-                    auto capacity = capacityGraph.at(u).at(neighbor);
+                    auto capacity = capacityGraph.at(node).at(neighbor);
                     // if not connected skip
                     if (!capacity.has_value()) continue;
-                    auto flow = flowGraph.at(u).at(neighbor);
+                    auto flow = flowGraph.at(node).at(neighbor);
 
                     if (!levels.at(neighbor).has_value() && flow < capacity.value()) {
-                        levels.at(neighbor) = levels.at(u).value() + 1;
-
+                        levels.at(neighbor) = levels.at(node).value() + 1;
+                        capacity
                         q.push(neighbor);
                     }
                 }
