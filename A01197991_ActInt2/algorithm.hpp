@@ -58,27 +58,43 @@ namespace alg {
     }
 
     /**
-     * Implementation of Floyd's Shortest Paths algorithm for a graph represented by an adjacency matrix. It runs
-     * in O(V^3) time, executing three loops within each other from 0 to V.
-     * @param graph
+     * This is a naive solution for the travelling salesman problem. It attempts every possible permutation vertices
+     * as a path, finally returning the optimal path. It runs in O(n!).
+     * @param distanceGraph
+     * @param source
      * @return
      */
-    AdjacencyMatrix<int> floydShortestPaths(AdjacencyMatrix<int> const &graph) {
-        auto n = graph.size();
-        AdjacencyMatrix<int> pathWeights = graph;
-
-        for (int k = 0; k < n; k++) {
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (!pathWeights[i][k].has_value() || !pathWeights[k][j].has_value()) continue;
-                    if (!pathWeights[i][j].has_value() ||
-                        pathWeights[i][j].value() > pathWeights[i][k].value() + pathWeights[k][j].value()) {
-                        pathWeights[i][j] = pathWeights[i][k].value() + pathWeights[k][j].value();
-                    }
-                }
-            }
+    std::pair<std::vector<std::size_t>, int> travellingSalesman(AdjacencyMatrix<int> const &distanceGraph, std::size_t source) {
+        std::vector<std::size_t> vertices;
+        vertices.reserve(distanceGraph.size() - 1);
+        for (std::size_t i = 0; i < distanceGraph.size(); i++) {
+            if (i == source) continue;
+            vertices.push_back(i);
         }
-        return pathWeights;
+
+        std::vector<std::size_t> minPath;
+        int minWeight = std::numeric_limits<int>::max();
+
+        do {
+            int currentWeight = 0;
+            std::size_t k = source;
+
+            for (std::size_t i = 0; i < vertices.size(); i++) {
+                currentWeight += distanceGraph.at(k).at(vertices.at(i)).value();
+                k = vertices.at(i);
+            }
+
+            currentWeight += distanceGraph.at(k).at(source).value();
+
+            if (currentWeight < minWeight) {
+                minPath = vertices;
+                minWeight = currentWeight;
+            }
+        } while (std::ranges::next_permutation(vertices).found);
+
+        minPath.insert(minPath.begin(), 0);
+        minPath.push_back(0);
+        return {minPath, minWeight};
     }
 
     /**
@@ -92,7 +108,7 @@ namespace alg {
      * @return
      */
     int sendFlowHelper(AdjacencyMatrix<int> const &capacityGraph, AdjacencyMatrix<int> &flowGraph, std::size_t v,
-                       std::size_t vt, int flow, std::vector<std::optional<std::size_t>> const &levels){
+                       std::size_t vt, int flow, std::vector<std::optional<std::size_t>> const &levels) {
         if (v == vt) return flow;
 
         for (std::size_t vi = 0; vi < capacityGraph.size(); vi++) {
@@ -122,7 +138,7 @@ namespace alg {
      * @param v2
      * @return
      */
-    int maximumFlow(AdjacencyMatrix<int> const &capacityGraph, std::size_t v1, std::size_t v2){
+    int maximumFlow(AdjacencyMatrix<int> const &capacityGraph, std::size_t v1, std::size_t v2) {
         AdjacencyMatrix<int> flowGraph{capacityGraph.size(), AdjacencyMatrixRow<int>(capacityGraph.size(), 0)};
 
         std::vector<std::optional<std::size_t>> levels(capacityGraph.size());

@@ -53,8 +53,7 @@ int main() {
 
     // traveling salesman problem to find path that goes through all nodes
     // TODO process floyd weights
-    auto weights = alg::floydShortestPaths(distanceGraph);
-    std::vector<std::pair<std::size_t, std::size_t>> shortestRoute;
+    auto [path, pathWeight] = alg::travellingSalesman(distanceGraph, 0);
 
     //assume distance graph is symmetrical
 
@@ -85,6 +84,10 @@ int main() {
 
     // Print the traveling salesman solution
     std::cout << "-2" << "\n";
+    for (auto vertex: path) {
+        std::cout << vertex << " ";
+    }
+    std::cout << "\n" << pathWeight << "\n";
 
     // Print the maximum flow
     std::cout << "-3" << "\n";
