@@ -2,6 +2,11 @@
  * Actividad Integradora 2
  * Hiram Maximiliano Muñoz Ramirez A01197991
  * Angel Rigoberto García García A00830475
+ *
+ * Compiled on Arch Linux (Linux 6.3.4) with the gcc compiler toolchain version 13.1.1
+ * g++ -o out -std=c++20 main.cpp
+ * ./out
+ *
  * 30/03/2023
  */
 #include <vector>
