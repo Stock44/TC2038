@@ -12,14 +12,16 @@
 
 
 namespace alg {
-    using AdjacencyMatrixRow = std::vector<std::optional<float>>;
-    using AdjacencyMatrix = std::vector<AdjacencyMatrixRow>;
+    template<typename T>
+    using AdjacencyMatrixRow = std::vector<std::optional<T>>;
+    template<typename T>
+    using AdjacencyMatrix = std::vector<AdjacencyMatrixRow<T>>;
 
     // Data structure to store data about a particular edge
     struct GraphEdge {
         std::size_t start;
         std::size_t end;
-        float weight;
+        int weight;
     };
 
     /**
@@ -28,7 +30,7 @@ namespace alg {
      * edge with the smallest weight run in O(1).
      * @param graph
      */
-    std::vector<GraphEdge> minimumSpanningTreeEdges(AdjacencyMatrix const &graph);
+    std::vector<GraphEdge> minimumSpanningTreeEdges(AdjacencyMatrix<int> const &graph);
 
     /**
      * Este algoritmo calcula las distancias mas cortas para un grafo representado por una matriz de adjacencia. El algoritmo
@@ -36,11 +38,9 @@ namespace alg {
      * @param graph La matriz de adjacencia que representa el grafo.
      * @return Una matriz de adjacencia que continene las distancias minimas entre vertices.
      */
-    AdjacencyMatrix floydShortestPaths(AdjacencyMatrix const &graph);
+    AdjacencyMatrix<int> floydShortestPaths(AdjacencyMatrix<int> const &graph);
 
-    bool bfs(AdjacencyMatrix const &graph, std::size_t v1, std::size_t v2);
+    int sendFlowHelper(AdjacencyMatrix<int> const &capacityGraph, AdjacencyMatrix<int> &flowGraph, std::size_t v, std::size_t vt, int flow, std::vector<std::optional<std::size_t>> const &levels);
 
-    int sendFlow(AdjacencyMatrix const &graph, std::size_t v1, std::size_t v2, int flow, int t, std::span<std::size_t> start);
-
-    float maximumFlow(AdjacencyMatrix const &graph, std::size_t v1, std::size_t v2);
+    int maximumFlow(AdjacencyMatrix<int> const &graph, std::size_t v1, std::size_t v2);
 }

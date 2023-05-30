@@ -7,14 +7,14 @@ int main() {
     int maxLength = 0;
     std::size_t n;
     std::cin >> n;
-    alg::AdjacencyMatrix distanceGraph{n, alg::AdjacencyMatrixRow(n)};
-    alg::AdjacencyMatrix flowGraph{n, alg::AdjacencyMatrixRow(n)};
+    alg::AdjacencyMatrix<int> distanceGraph{n, alg::AdjacencyMatrixRow<int>(n)};
+    alg::AdjacencyMatrix<int> flowGraph{n, alg::AdjacencyMatrixRow<int>(n)};
     std::vector<geo::Point> points;
 
     for (std::size_t i = 0; i < n; i++) {
         auto &row = distanceGraph.at(i);
         for (std::size_t j = 0; j < n; j++) {
-            float weight;
+            int weight;
             std::cin >> weight;
             if (weight != 0) row.at(j) = weight;
         }
@@ -23,7 +23,7 @@ int main() {
     for (std::size_t i = 0; i < n; i++) {
         auto &row = flowGraph.at(i);
         for (std::size_t j = 0; j < n; j++) {
-            float weight;
+            int weight;
             std::cin >> weight;
             if (weight != 0) row.at(j) = weight;
         }
@@ -53,6 +53,7 @@ int main() {
     //assume distance graph is symmetrical
 
     // TODO find maximum flux for network
+    int maxFlow = alg::maximumFlow(flowGraph, 0, flowGraph.size() - 1);
 
     auto voronoi = geo::voronoiDiagram(points);
 
@@ -79,6 +80,8 @@ int main() {
     // Print the traveling salesman solution
     std::cout << "-2" << "\n";
 
+    std::cout << "-3" << "\n";
+    std::cout << maxFlow << "\n";
 
     // Print the voronoi polygons
     std::cout << "-4" << "\n";
@@ -86,7 +89,7 @@ int main() {
     for (auto const &polygon: voronoi) {
         std::cout << "-4" << count << "\n";
         for (auto const &point: polygon.points | std::views::reverse) {
-            std::cout << point.x << " " << point.y << "\n";
+            std::cout << std::round(point.x) << " " << std::round(point.y) << "\n";
         }
         count++;
     }
