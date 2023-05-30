@@ -1,3 +1,9 @@
+/**
+ * Actividad Integradora 2
+ * Hiram Maximiliano Muñoz Ramirez A01197991
+ * Angel Rigoberto García García A00830475
+ * 30/03/2023
+ */
 #include <vector>
 #include <iostream>
 #include "geometry.hpp"
@@ -80,6 +86,7 @@ int main() {
     // Print the traveling salesman solution
     std::cout << "-2" << "\n";
 
+    // Print the maximum flow
     std::cout << "-3" << "\n";
     std::cout << maxFlow << "\n";
 

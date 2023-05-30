@@ -26,7 +26,12 @@ namespace dst {
          * Creates a disjoint set of a given size, with each element being initialized in its own subset in O(n) time.
          * @param size
          */
-        explicit DisjointSet(std::size_t size);
+        explicit DisjointSet(std::size_t size) {
+            for (std::size_t node = 0; node < size; node++) {
+                nodes.emplace_back(std::make_unique<Node>(nullptr, 0));
+                nodes.at(node)->parent = nodes.at(node).get();
+            }
+        }
 
         /**
          * Finds the representative of a given node, while also flattening the tree of the set, allowing for faster future
@@ -35,7 +40,14 @@ namespace dst {
          * @param node
          * @return the node's representative
          */
-        Node *findRepresentative(std::size_t node);
+        Node *findRepresentative(std::size_t node) {
+            auto currentNode = nodes.at(node).get();
+            while (currentNode->parent != currentNode) {
+                currentNode->parent = currentNode->parent->parent;
+                currentNode = currentNode->parent;
+            }
+            return currentNode;
+        }
 
         /**
          * Computes the union of the subsets of the given nodes, using the ranks as guide in order to prevent the tree from
@@ -45,7 +57,23 @@ namespace dst {
          * @param second
          * @return
          */
-        void nodeUnion(std::size_t first, std::size_t second);
+        void nodeUnion(std::size_t first, std::size_t second) {
+            auto firstRepr = findRepresentative(first);
+            auto secondRepr = findRepresentative(second);
+
+            if (firstRepr == secondRepr) {
+                return;
+            }
+
+            if (firstRepr->rank < secondRepr->rank) {
+                std::swap(firstRepr, secondRepr);
+            }
+
+            secondRepr->parent = firstRepr;
+            if (firstRepr->rank == secondRepr->rank) {
+                firstRepr->rank++;
+            }
+        }
 
     private:
         std::vector<std::unique_ptr<Node>> nodes;
