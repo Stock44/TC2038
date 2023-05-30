@@ -57,12 +57,8 @@ int main() {
     auto mst = alg::minimumSpanningTreeEdges(distanceGraph);
 
     // traveling salesman problem to find path that goes through all nodes
-    // TODO process floyd weights
     auto [path, pathWeight] = alg::travellingSalesman(distanceGraph, 0);
 
-    //assume distance graph is symmetrical
-
-    // TODO find maximum flux for network
     int maxFlow = alg::maximumFlow(flowGraph, 0, flowGraph.size() - 1);
 
     auto voronoi = geo::voronoiDiagram(points);
