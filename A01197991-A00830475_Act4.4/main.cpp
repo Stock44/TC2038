@@ -18,7 +18,8 @@
 
 
 /**
- * This algorithm randomizedBinarySearch
+ * This algorithm takes a list of integers and creates a random index to compare if its the searched number, if not
+ * then the range of index to search changes, this algorithm run in O(n) in the worst case.
  * @param list
  * @param n
  * @return index of n
