@@ -17,18 +17,19 @@
 std::pair<std::vector<int>,std::vector<int>> backtracking(std::vector<int> values, int objective){
     std::vector<int> accepted;
     std::vector<int> denied;
-    for(auto value:values){
-        for(auto set:values){
-            if(value == set){
-                if(set == objective){
-                    accepted.emplace_back(set);
-                }
-                else{
-                    denied.emplace_back(set);
-                }
+    int result;
+    for(int i = 0; i < values.size(); i++){
+        result = 0;
+        for(int j = i; j < values.size(); j++){
+            result += values.at(j);
+            if(result == objective){
+                accepted.emplace_back(result);
             }
+            else denied.emplace_back(result);
+
         }
     }
+    return {accepted, denied};
 }
 
 
@@ -39,6 +40,7 @@ int main() {
     std::vector<int> values;
     int value;
     int objective;
+    std::cin>>n;
     for(int i = 0; i < n; i++){
         std::cin>>value;
         values.emplace_back(value);
