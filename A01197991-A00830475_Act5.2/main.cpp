@@ -28,9 +28,9 @@ int BinarySearch(std::vector<int> list, int n) {
 
     while (list.at(middle) != n) {
 
-        if (list.at(middle) > n) {
+        if (list.at(middle) < n) {
             start = middle + 1;
-        } else if (list.at(middle) < n) {
+        } else {
             end = middle;
         }
 
