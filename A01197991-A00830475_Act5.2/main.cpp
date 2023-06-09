@@ -18,16 +18,16 @@
 int BinarySearch(std::vector<int> list, int n) {
     size_t start = 0;
     size_t end = list.size() - 1;
-    int middle = floor((start + end)/2);
+    size_t middle = (start + end)/2;
 
     while(list.at(middle) != n){
         if(list.at(middle) > n){
             end = middle + 1;
-            middle = floor((start + end)/2);
+            middle = (start + end)/2;
         }
         else if(list.at(middle) < n){
             start = middle - 1;
-            middle = floor((start + end)/2);
+            middle = (start + end)/2;
         }
         if(middle == start || middle == end){
             break;
