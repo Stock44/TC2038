@@ -71,7 +71,7 @@ auto meetInMiddle(const std::vector<int> &values, int objective) {
     int search;
     int cont = 0;
     for (auto value: values) {
-        if (cont >= values.size() / 2) {
+        if (cont <= values.size() / 2) {
             First.emplace_back(value);
         } else {
             Second.emplace_back(value);
