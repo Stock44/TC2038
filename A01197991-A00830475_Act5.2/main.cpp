@@ -65,13 +65,13 @@ auto meetInMiddle(const std::vector<int>& values, int objective){
     int search;
     int cont = 0;
     for(auto value:values){
-        cont++;
-        if(cont >= values.size()/2 - 1){
+        if(cont >= values.size()/2){
             First.emplace_back(value);
         }
         else{
             Second.emplace_back(value);
         }
+        cont++;
     }
     auto [accepted, denied] = backtracking(First, objective);
     auto [acceptedSecond, deniedSecond] = backtracking(Second, objective);
@@ -85,7 +85,7 @@ auto meetInMiddle(const std::vector<int>& values, int objective){
         if(search == token){
 
             while(true){
-                if(deniedSecond.at(index - 1) == token && index == 0){
+                if(deniedSecond.at(index - 1) == token && index != 0){
                     index --;
                 }
                 else break;
