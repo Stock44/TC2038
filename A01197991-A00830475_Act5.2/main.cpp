@@ -16,6 +16,13 @@
 #include <cmath>
 #include <algorithm>
 
+/**
+ * This algorithm takes a list of integers and compares the number in the middle of the list if its the searched number, if not
+ * then the range of index to search changes, this algorithm run in O(log n).
+ * @param list
+ * @param n
+ * @return index of n
+ */
 int BinarySearch(std::vector<int> list, int n) {
 
     if (list.empty()) {
@@ -47,6 +54,13 @@ int BinarySearch(std::vector<int> list, int n) {
     return -1;
 }
 
+/**
+ * This algorithm takes a set of integers and compares every combination of the set if its equal to the objective,
+ * this algorithm runs at O(2^n)
+ * @param values
+ * @param objective
+ * @return pair<vector, vector>
+ */
 std::pair<std::vector<int>, std::vector<int>> backtracking(std::vector<int> values, int objective) {
     std::vector<int> accepted;
     std::vector<int> denied;
@@ -64,7 +78,15 @@ std::pair<std::vector<int>, std::vector<int>> backtracking(std::vector<int> valu
     return {accepted, denied};
 }
 
-
+/**
+ * This algorithm takes a set of integers and cut it in two, compares every combination in each half,
+ * the combinations that weren't equal to the objective in both sets are subtracted from the objective to find
+ * a combination in the other half
+ * this algorithm runs at O(n2^(n/2))
+ * @param values
+ * @param objective
+ * @return accepted
+ */
 auto meetInMiddle(const std::vector<int> &values, int objective) {
     std::vector<int> First;
     std::vector<int> Second;
