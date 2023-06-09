@@ -13,6 +13,31 @@
  */
 #include <iostream>
 #include <vector>
+#include <cmath>
+
+int BinarySearch(std::vector<int> list, int n) {
+    size_t start = 0;
+    size_t end = list.size() - 1;
+    int middle = floor((start + end)/2);
+
+    while(list.at(middle) != n){
+        if(list.at(middle) > n){
+            end = middle + 1;
+            middle = floor((start + end)/2);
+        }
+        else if(list.at(middle) < n){
+            start = middle - 1;
+            middle = floor((start + end)/2);
+        }
+        if(middle == start || middle == end){
+            break;
+        }
+    }
+    if(list.at(middle) == n){
+        return middle;
+    }
+    return -1;
+}
 
 std::pair<std::vector<int>,std::vector<int>> backtracking(std::vector<int> values, int objective){
     std::vector<int> accepted;
@@ -34,6 +59,50 @@ std::pair<std::vector<int>,std::vector<int>> backtracking(std::vector<int> value
 
 
 
+auto meetInMiddle(const std::vector<int>& values, int objective){
+    std::vector<int> First;
+    std::vector<int> Second;
+    int search;
+    int cont = 0;
+    for(auto value:values){
+        cont++;
+        if(cont >= values.size()/2 - 1){
+            First.emplace_back(value);
+        }
+        else{
+            Second.emplace_back(value);
+        }
+    }
+    auto [accepted, denied] = backtracking(First, objective);
+    auto [acceptedSecond, deniedSecond] = backtracking(Second, objective);
+
+    std::sort(deniedSecond.begin(), deniedSecond.end());
+
+    for (auto deny:denied){
+        search = objective - deny;
+        auto index = BinarySearch(deniedSecond, search);
+        auto token = deniedSecond.at(index);
+        if(search == token){
+
+            while(true){
+                if(deniedSecond.at(index - 1) == token && index == 0){
+                    index --;
+                }
+                else break;
+            }
+            while (token == deniedSecond.at(index)){
+                index++;
+                accepted.emplace_back(token);
+            }
+        }
+    }
+    for(auto accept:acceptedSecond){
+        accepted.emplace_back(accept);
+    }
+    return accepted;
+}
+
+
 
 int main() {
     std::size_t n;
@@ -47,6 +116,8 @@ int main() {
     }
     std::cin>>objective;
 
+    auto accepted = meetInMiddle(values, objective);
 
+    std::cout << accepted.size();
     return 0;
 }
