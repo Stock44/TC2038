@@ -25,5 +25,6 @@ add_executable(Act4.3 A01197991-A00830475_Act4.3/main.cpp A01197991-A00830475_Ac
 add_executable(Act4.4 A01197991-A00830475_Act4.4/main.cpp)
 add_executable(Act5.1 A01197991-A00830475_Act5.1/main.cpp)
 add_executable(Act5.2 A01197991-A00830475_Act5.2/main.cpp)
+add_executable(Act5.3 A01197991-A00830475_Act5.3/main.cpp)
 
 add_executable(ActInt2 A01197991_ActInt2/main.cpp)
