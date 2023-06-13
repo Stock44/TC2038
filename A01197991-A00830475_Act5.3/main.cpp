@@ -1,6 +1,16 @@
-//
-// Created by hiram on 6/13/23.
-//
+/**
+ * Actividad 5.3 Implementación de A*
+ * Hiram Maximiliano Muñoz Ramirez A01197991
+ * Angel Rigoberto García García A00830475
+ *
+ * This file implements the A* pathfinding algorithm using an euclidean distance heuristic function.
+ *
+ * Compiled on Arch Linux (Linux 6.2.10) with the gcc compiler toolchain version 13.1.1
+ * g++ -o out -std=c++20 main.cpp
+ * ./out
+ *
+ * 13/06/23
+ */
 #include <vector>
 #include <optional>
 #include <unordered_map>
@@ -11,11 +21,20 @@
 #include <numeric>
 #include <stack>
 
+/**
+ * This class is an implementation of a graph data structure represented by an adjacency matrix.
+ * @tparam V Type to store in each vertex
+ * @tparam E Type that represents the edge weights
+ */
 template<typename V, typename E>
 class Graph {
 public:
     using VertexDescriptor = std::size_t;
 
+    /**
+     * This function returns the list of vertices in O(n) time.
+     * @return
+     */
     [[nodiscard]] std::vector<VertexDescriptor> vertices() const &{
         auto _vertices = std::vector<VertexDescriptor>(store.size());
 
@@ -24,38 +43,76 @@ public:
         return _vertices;
     }
 
+    /**
+     * This function creates a new vertex and assigns to it the given value.
+     * @tparam T
+     * @param value
+     * @return
+     */
     template<typename T>
     VertexDescriptor addVertex(T &&value) {
         VertexDescriptor vertex = store.size();
         for (auto &row: store) {
             row.emplace_back();
         }
-        store.emplace_back(vertex + 1, E());
+        store.emplace_back(vertex + 1);
         vertexProperties.emplace(vertex, std::forward<T>(value));
         return vertex;
     }
 
+    /**
+     * This function creates an edge between two vertices and gives it the given weight
+     * @tparam T
+     * @param v1
+     * @param v2
+     * @param value
+     */
     template<typename T>
     void addEdge(VertexDescriptor v1, VertexDescriptor v2, T &&value) {
         store.at(v1).at(v2) = std::forward<T>(value);
     }
 
+    /**
+     * This function accesses the weight for the given edge;
+     * @param edge
+     * @return
+     */
     std::optional<E> const &operator[](std::pair<VertexDescriptor, VertexDescriptor> edge) const {
         return store.at(edge.first).at(edge.second);
     }
 
+    /**
+     * This function accesses the stored property for the given vertex.
+     * @param vertex
+     * @return
+     */
     V const &operator[](VertexDescriptor const &vertex) const {
         return vertexProperties.at(vertex);
     }
 
+    /**
+     * This function accesses the weight for the given edge;
+     * @param edge
+     * @return
+     */
     std::optional<E> &operator[](std::pair<VertexDescriptor, VertexDescriptor> edge) {
         return store.at(edge.first).at(edge.second);
     }
 
+    /**
+     * This function accesses the stored property for the given vertex.
+     * @param vertex
+     * @return
+     */
     V &operator[](VertexDescriptor const &vertex) {
         return vertexProperties.at(vertex);
     }
 
+    /**
+     * This function obtains the neighbor vertices for a given vertex, in O(n) time.
+     * @param vertex
+     * @return
+     */
     [[nodiscard]] std::vector<VertexDescriptor> neighbors(VertexDescriptor vertex) const {
         std::vector<VertexDescriptor> neighbors;
         auto const &possibleNeighbors = store.at(vertex);
@@ -75,15 +132,37 @@ private:
     std::unordered_map<VertexDescriptor, V> vertexProperties;
 };
 
+/**
+ * Data structure representing a point in euclidean space.
+ */
 struct Point {
     double x;
     double y;
 };
 
+/**
+ * Euclidean distance between two points
+ * @param p1
+ * @param p2
+ * @return
+ */
 double distance(Point p1, Point p2) {
     return std::sqrt(std::pow(p2.x - p1.x, 2) + std::pow(p2.y - p1.y, 2));
 }
 
+/**
+ * Implementation of the aStar algorithm on a graph, from a given end to start function, as well as a heuristic function.
+ * Its time complexity is very dependent on its heuristic function, with the worst case having and
+ * exponential complexity.
+ * @tparam V
+ * @tparam E
+ * @tparam H
+ * @param graph
+ * @param start
+ * @param end
+ * @param heuristic
+ * @return
+ */
 template<typename V, typename E, typename H>
 std::vector<typename Graph<V, E>::VertexDescriptor> aStar(Graph<V, E> const &graph, typename Graph<V, E>::VertexDescriptor start,
            typename Graph<V, E>::VertexDescriptor end, H &&heuristic) {
@@ -105,7 +184,7 @@ std::vector<typename Graph<V, E>::VertexDescriptor> aStar(Graph<V, E> const &gra
     auto comp = [&fullCosts](Vertex const &v1, Vertex const &v2) {
         if (!fullCosts.at(v1).has_value()) return false;
         if (!fullCosts.at(v2).has_value()) return true;
-        return fullCosts.at(v1).value() < fullCosts.at(v2).value();
+        return fullCosts.at(v1).value() > fullCosts.at(v2).value();
     };
 
     std::priority_queue<Vertex, std::vector<Vertex>, decltype(comp)> openQueue(comp);
@@ -197,7 +276,6 @@ int main() {
 
     double distance = 0;
     for (auto it = path.begin() + 1; it != path.end(); it++) {
-        std::cout << *(it - 1) << " to " << *it << " | cost: " << graph[std::make_pair(*(it - 1), *it)].value() << "\n";
         distance += graph[std::make_pair(*(it - 1), *it)].value();
     }
 
